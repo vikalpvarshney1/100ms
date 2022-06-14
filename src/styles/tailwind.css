@@ -7,12 +7,7 @@ html {
     /* 2 */
 }
 
-/* Sections
-   ========================================================================== */
 
-/**
- * Remove the margin in all browsers.
- */
 
 body {
     margin: 0;
@@ -143,24 +138,13 @@ sup {
     top: -0.5em;
 }
 
-/* Embedded content
-   ========================================================================== */
 
-/**
- * Remove the border on images inside links in IE 10.
- */
 
 img {
     border-style: none;
 }
 
-/* Forms
-   ========================================================================== */
 
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
 
 button,
 input,

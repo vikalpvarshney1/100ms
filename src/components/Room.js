@@ -17,12 +17,12 @@ const Room = () => {
     const isConnected = useHMSStore(selectIsConnectedToRoom);
     const hmsActions = useHMSActions();
     const [count, setcount] = useState(0)
-    const [min,setmin]=useState(0)
+    const [min, setmin] = useState(0)
     function counter() {
-     var x =   setInterval(() => {
+        var x = setInterval(() => {
             setcount(count + 1)
-            if(count==59){
-                setmin(min+1)
+            if (count == 59) {
+                setmin(min + 1)
                 setcount(0)
             }
             return (
@@ -31,11 +31,17 @@ const Room = () => {
         }, 1000);
 
     }
-    useEffect(()=>{
+    useEffect(() => {
         counter()
+      
     })
-  
-    
+    function all() {
+        var x = min
+        var y = count
+        alert(`${x<10? "0"+x: x}:${y}`)
+    }
+
+
 
     return (
         <div >
@@ -44,16 +50,19 @@ const Room = () => {
                 {isConnected && (
                     <button
                         id="leave-btn"
-                        // style={{ color: "black", border: "1px solid black", fontSize: "bold", }}
-                        // className="text-xs uppercase tracking-wider bg-white py-1 px-2 rounded-lg shadow-lg text-indigo-500"
                         className="flex bg-gray-900"
-                        onClick={() => hmsActions.leave()}
+                        onClick={() => {
+
+
+                            hmsActions.leave()
+                            alert(all())
+                        }}
                     >
                         <div style={{ display: "flex", flexDirection: "row-reverse", color: "black", padding: "5px", backgroundColor: "red", borderRadius: "10px", marginTop: "10px" }}
 
                         >Leave Room</div>
-                        <div style={{ marginLeft:"85%", color: "black", padding: "5px", backgroundColor: "red", borderRadius: "10px", marginTop: "10px" }}
-                        >Time:{min<10 ?"0"+min:min}:{count<10?"0"+count:count} </div>
+                        <div style={{ marginLeft: "85%", color: "black", padding: "5px", backgroundColor: "red", borderRadius: "10px", marginTop: "10px" }}
+                        >Time:{min < 10 ? "0" + min : min}:{count < 10 ? "0" + count : count} </div>
                     </button>
                 )}
                 <div className="flex bg-gray-900 w-screen min-h-screen p-2 flex-wrap">

@@ -33,7 +33,6 @@ const Room = () => {
     }
     useEffect(() => {
         counter()
-      
     })
     function all() {
         var x = min
